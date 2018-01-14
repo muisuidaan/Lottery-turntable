@@ -1,0 +1,26 @@
+{
+	"code":10000,
+	"msg":"",
+	"data":{
+		"isVip":1,
+		"init":255,
+		"prize":[
+			{
+				"img":"assets/images/img02.png",
+				"id":10
+			},
+			{
+				"img":"assets/images/img03.png",
+				"id":12
+			},
+			{
+				"img":"assets/images/img05.png",
+				"id":13
+			},
+			{
+				"img":"assets/images/img06.png",
+				"id":14
+			}
+		]
+	}
+}

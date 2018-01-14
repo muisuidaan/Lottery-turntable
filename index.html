@@ -1,0 +1,141 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta name="format-detection" content="telephone=no">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<link href="assets/stylesheets/style.css" rel="stylesheet" type="text/css" />
+
+	<title>大转盘</title>
+</head>
+<body>
+	<div class="html index" id="html" style="background-image:url(assets/images/bg_index.jpg);">
+		<p class="logo"><img src="assets/images/logo.png"></p>
+		<p class="topimg"><img src="assets/images/biaoti_01.png"></p>
+		<div class="pan">
+			<img src="assets/images/bg_img01.png" class="imgpan">
+			<img src="assets/images/bg_img02.png" class="imgsd">
+			<img src="assets/images/bg_img04.png" class="imgpo " id="J_imgpo">
+			<img src="assets/images/bg_img03.png" class="imgbtn" id="J_imgbtn">
+			<div class="lis">
+				<p class="li"><img src="assets/images/img04.png"></p>
+				<p class="li"><img src="assets/images/img2.png" class="J_img_pri"></p>
+				<p class="li"><img src="assets/images/img04.png"></p>
+				<p class="li"><img src="assets/images/img1.png" class="J_img_pri"></p>
+				<p class="li"><img src="assets/images/img04.png"></p>
+				<p class="li"><img src="assets/images/img2.png" class="J_img_pri"></p>
+				<p class="li"><img src="assets/images/img04.png"></p>
+				<p class="li"><img src="assets/images/img4.png" class="J_img_pri"></p>
+				<p class="li"><img src="assets/images/img04.png"></p>
+				<p class="li"><img src="assets/images/img3.png" class="J_img_pri"></p>
+				<p class="li"><img src="assets/images/img04.png"></p>
+				<p class="li"><img src="assets/images/img5.png" class="J_img_pri"></p>
+			</div>
+		</div>
+		<div class="texttip" id="J_texttip">50积分转1次，可用积分0</div>
+		<div class="btns">
+			<a href="javascript:;" class="btn" id="J_rulebtn">活动规则</a>
+			<a href="prize.html" class="btn btnr">我的奖励</a>
+		</div>
+
+		<div class="pops dsn" id="J_pops">
+			<div class="pop dsn" id="J_rule">
+				<p class="title">活动规则</p>
+				<ul class="texts">
+					<li class="li">1.  每次大转盘需要消耗50积分,点击开始大转盘,积分立即扣除</li>
+					<li class="li">2. 一等奖300积分,二等奖100积分</li>
+					<li class="li">3. 可用积分不足50分时,不能参加游戏</li>
+					<li class="li">4. 已扣除的积分不可返还</li>
+					<li class="li">5. 砸中的奖品可在我的奖励里查看</li>
+					<li class="li">6. 砸中的积分将会立即进入您的会员积分账户,积分累积可以兑换更多礼品或参加每周一次的幸运大转盘,赢出国游活动</li>
+				</ul>
+				<p class="pbtns"><a href="javascript:;" class="J_close pbtn">确定</a></p>
+			</div>
+			<div class="pop pop_s dsn" id="J_prize_two">
+				<img src="assets/images/ribbon.png" class="outimg">
+				<p class="titlea">转出二等奖</p>
+				<p class="subtil">携程旅游自由行5元优惠券1张</p>
+				<p class="texta">已发放到会员积分账户，请到 会员中心> 可用积分 中查看。</p>
+				<p class="pbtns"><a href="javascript:;" class="J_close pbtn">确定</a></p>
+			</div>
+			<div class="pop pop_s dsn" id="J_prize_one">
+				<img src="assets/images/ribbon.png" class="outimg">
+				<p class="titlea">转出一等奖</p>
+				<p class="subtil">西班牙风情7日游</p>
+				<p class="texta">请留下联系方式，我们的工作人员将会在3个工作日内与您联系</p>
+				<p class="input"><input type="text" class="control" placeholder="请输入姓名"></p>
+				<p class="input"><input type="text" class="control" placeholder="请输入手机号码"></p>
+				<p class="pbtns"><a href="javascript:;" class="pbtn">确定</a></p>
+			</div>
+			<div class="pop pop_s dsn" id="J_prize_no">
+				<img src="assets/images/ribbon.png" class="outimg">
+				<p class="titlea">未中奖</p>
+				<p class="subtil">可能是你转的姿势不对，换个姿势再来一次。</p>
+				<p class="pbtns"><a href="javascript:;" class="J_close pbtn">确定</a></p>
+			</div>
+			<img src="assets/images/light.png" class="light" id="J_light">
+		</div>
+	</div>
+	<script language="javascript" type="text/javascript" src="assets/javascripts/jquery-2.1.4.min.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/javascripts/flexible.js"></script>
+<!-- 	// <script language="javascript" type="text/javascript" src="assets/javascripts/main.js"></script> -->
+	<script type="text/javascript">
+		;(function ($, window, document, undefined) {
+		    var page = (function () {
+		        return {
+		            bindEvent:function(){
+		                var _this = this,isclick = false,turn,csq=0,J_imgpo = $('#J_imgpo'),isres = false,pdeg=0;
+		                $('#J_imgbtn').click(function(){
+		                	if(isclick){return false};
+		                	isclick = true;
+		                	turn = setInterval(function(){
+		                		csq++;
+		                		J_imgpo.attr('style','-moz-transition:-moz-transform 0.5s linear;-webkit-transition:-webkit-transform 0.5s linear; transition:transform 0.5s linear;transform:rotate('+(csq*360)+'deg);-webkit-transform:rotate('+(csq*360)+'deg);');
+		                		checkres();
+		                	},500);
+
+		                	var res = {
+		                		"code":1000,
+		                		"data":{
+		                			"prizeid":1
+		                		}
+		                	}
+		                    setTimeout(function(){
+		                    	isres = true
+		                    	if(res.data.prizeid==0){
+	                                var rd = Math.floor(Math.random()*5);
+	                                pdeg = rd*60+15;
+	                            }else{
+	                                pdeg = res.data.prizeid*60+45;
+	                            }
+	                            console.log(csq)
+	                            // J_imgpo.attr('style','-webkit-transition:-webkit-transform 4s; transition:transform 4s;transform:rotate('+deg+'deg);-webkit-transform:rotate('+deg+'deg);')
+		                    },3000);
+		                });
+						function checkres(){
+							if(isres){
+								clearInterval(turn);
+								setTimeout(function(){
+									csq++;
+									J_imgpo.attr('style','-webkit-transition:-webkit-transform 3s ease-out;-moz-transition:-moz-transform 3s ease-out; transition:transform 3s ease-out;transform:rotate('+(csq*360+pdeg)+'deg);-webkit-transform:rotate('+(csq*360+pdeg)+'deg);')
+								},500);
+							}
+						}
+		            },
+		            init: function(){
+		                this.bindEvent();
+		            }
+		        };
+		    })();
+		    $(function(){
+		        page.init();
+		    });
+		})(jQuery, window, document);
+
+	</script>
+</body>
+</html>

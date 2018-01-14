@@ -1,0 +1,38 @@
+{
+	"code":10000,
+	"msg":"",
+	"data":{
+		"list":[
+			{
+				"sn":"xxd5sdsfwefwe1f6sd5f1",
+				"title":"品利橄榄油超值礼盒1份",
+				"status":1,
+				"time":"2015.10.12  14:27:09"
+			},
+			{
+				"sn":"xxd5sdsfwefwe1f6sd5f1",
+				"title":"100积分",
+				"status":0,
+				"time":"2015.10.12  14:27:09"
+			},
+			{
+				"sn":"xxd5sdsfwefwe1f6sd5f1",
+				"title":"品利橄榄油超值礼盒1份",
+				"status":1,
+				"time":"2015.10.12  14:27:09"
+			},
+			{
+				"sn":"xxd5sdsfwefwe1f6sd5f1",
+				"title":"100积分",
+				"status":0,
+				"time":"2015.10.12  14:27:09"
+			},
+			{
+				"sn":"xxd5sdsfwefwe1f6sd5f1",
+				"title":"品利橄榄油超值礼盒1份",
+				"status":1,
+				"time":"2015.10.12  14:27:09"
+			}
+		]
+	}
+}
